@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Challenge 2: Juego del Ahorcado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+</head>
+
+<body ondragstart="return false" onselectstart="return false">
+    <nav>
+        <img src="img/oracle-alura-latam-logo.svg" alt="..." class="logo">
+    </nav>
+
+    <!-- TÍTULO Y SUBTÍTULO -->
+    <br>
+    <div class="title striked"> Ahorcado </div>
+
+    <!-- BREVE DESCRIPCIÓN-->
+    <div class="subtitle">
+        <small class="">Clásico juego de adivinar la palabra.</small>
+    </div>
+    <br>
+    <br>
+    <!-- SECCIÓN CON EL INPUT Y OUTPUT -->
+    <div class="pad-sm">
+        <div class="col pad">
+            <textarea id="input-add-words" class="input output" placeholder="Ingrese las palabras que quiera usar para el juego, separadas por una coma."></textarea>
+            <button id="btn-start" class="btn">¡Iniciar Juego!</button>
+            <p id="error-palabras">¡NO SE PUEDE JUGAR SI NADIE ELIGE LAS PALABRAS!</p>
+            <br>
+            <br>
+            <div id="start-settings">
+                <label><input type="checkbox" id="use-predetermined-words" class="start" checked>Usar palabras predeterminadas</label>
+                <label><input type="checkbox" id="use-own-words" class="start">Usar mis propias palabras</label>
+            </div>
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="col mar-ls">
+            <textarea id="input-try" class="input output" placeholder="Ingrese letras para comprobar."></textarea>
+            <br>
+            <div id="manual-buttons">
+                <button class="btn">Validar letra</button>
+                <button class="btn">Arriesgar palabra</button>
+                <button class="btn frst">Reiniciar</button>
+            </div>
+            <button class="btn scnd">Reiniciar</button>
+            <br>
+            <div id="ingame-settings">
+                <label><input type="checkbox" id="automatic-validation" checked>Validación automática</label>
+                <label><input type="checkbox" id="manual-validation">Validación manual</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Página creada por Ryan Horvat para el Alura Challenge - Semanas 3 y 4</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script src="https://kit.fontawesome.com/a6872e9a39.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
