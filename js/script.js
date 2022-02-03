@@ -71,7 +71,9 @@ ownWords.addEventListener("change", function() {
 function mobile() {
     getOS();
     if (os != "Android" || os != "iOS") {
-        alert(os);
+        alert("Yup");
+    } else {
+        alert("Nope");
     }
 }
 
