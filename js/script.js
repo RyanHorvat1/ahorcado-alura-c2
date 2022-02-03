@@ -15,6 +15,31 @@ const scndRestart = document.querySelector(".scnd");
 const autValidation = document.getElementById("automatic-validation");
 const manValidation = document.getElementById("manual-validation");
 
+
+var userAgent = window.navigator.userAgent;
+/*platform = window.navigator.platform,*/
+var platform = navigator.userAgentData.platform || navigator.platform || 'unknown';
+var macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
+var windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
+var iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+var os = null;
+
+function getOS() {
+    if (macosPlatforms.indexOf(platform) !== -1) {
+        os = 'Mac OS';
+    } else if (iosPlatforms.indexOf(platform) !== -1) {
+        os = 'iOS';
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+        os = 'Windows';
+    } else if (/Android/.test(userAgent)) {
+        os = 'Android';
+    } else if (!os && /Linux/.test(platform)) {
+        os = 'Linux';
+    }
+
+    return os;
+}
+
 function checkInitSelection() {
     var o = ownWords.checked;
     var p = predWords.checked;
@@ -43,7 +68,15 @@ ownWords.addEventListener("change", function() {
     checkInitSelection();
 });
 
+function mobile() {
+    getOS();
+    if (os != "Android" || os != "iOS") {
+        alert(os);
+    }
+}
+
 btnStart.addEventListener("click", function() {
+    mobile();
     canvas.style.display = "block";
     playing.style.display = "block";
     btnStart.style.display = "none";
