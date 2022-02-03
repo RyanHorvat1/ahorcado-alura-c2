@@ -17,8 +17,8 @@ const manValidation = document.getElementById("manual-validation");
 
 
 var userAgent = window.navigator.userAgent;
-/*platform = window.navigator.platform,*/
-var platform = navigator.userAgentData.platform || navigator.platform || 'unknown';
+platform = window.navigator.platform;
+/*var platform = navigator.userAgentData.platform || navigator.platform || 'unknown';*/
 var macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
 var windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
 var iosPlatforms = ['iPhone', 'iPad', 'iPod'];
