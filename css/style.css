@@ -131,7 +131,7 @@ label {
 }
 
 #hide {
-    display: none;
+    display: block;
 }
 
 footer {
