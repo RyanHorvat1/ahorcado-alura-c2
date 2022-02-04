@@ -4,10 +4,6 @@ const startZone = document.querySelector("#start-settings");
 const predWords = document.getElementById("use-predetermined-words");
 const ownWords = document.getElementById("use-own-words");
 const errorPalabras = document.getElementById("error-palabras");
-const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
-context.fillStyle = "#333";
-context.fillRect(0, 0, 1 * canvas.width, 1 * canvas.height);
 const mobilePlaying = document.querySelector(".mar-ls");
 const desktopPlaying = document.querySelector(".mar-ls-2")
 const inputTry = document.getElementById("input-try");
@@ -94,6 +90,8 @@ btnStart.addEventListener("click", function() {
         });
     }
 
+    drawGallow();
+    drawHang();
     canvas.style.display = "block";
     btnStart.style.display = "none";
     addedWords.style.display = "none";
