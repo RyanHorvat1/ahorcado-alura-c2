@@ -134,6 +134,10 @@ label {
     display: block;
 }
 
+.div-risk-word {
+    display: none;
+}
+
 #hide {
     display: block;
 }

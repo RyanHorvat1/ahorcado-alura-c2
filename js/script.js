@@ -15,6 +15,8 @@ const btnManGroup = document.getElementById("manual-buttons");
 const scndRestart = document.querySelector(".scnd");
 const autValidation = document.getElementById("automatic-validation");
 const manValidation = document.getElementById("manual-validation");
+const riwValidation = document.getElementById("risk-word");
+const divRiWValidation = document.querySelector(".div-risk-word");
 
 function checkInitSelection() {
     var o = ownWords.checked;
@@ -47,8 +49,49 @@ ownWords.addEventListener("change", function() {
 btnStart.addEventListener("click", function() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         mobilePlaying.style.display = "block";
+        desktopPlaying.style.display = "none";
+        divRiWValidation.style.display = "none";
+
+        manValidation.addEventListener("change", function() {
+            if (manValidation.checked) {
+                autValidation.checked = false;
+                inputTry.placeholder = "Ingrese una letra o una palabra para comprobar.";
+                btnManGroup.style.display = "block";
+                scndRestart.style.display = "none";
+            } else {
+                autValidation.checked = true;
+                btnManGroup.style.display = "none";
+                scndRestart.style.display = "block";
+            }
+        })
+
+        autValidation.addEventListener("change", function() {
+            if (autValidation.checked) {
+                manValidation.checked = false;
+                inputTry.placeholder = "Ingrese letras para comprobar.";
+                btnManGroup.style.display = "none";
+                scndRestart.style.display = "block";
+            } else {
+                manValidation.checked = true;
+                btnManGroup.style.display = "block";
+                scndRestart.style.display = "none";
+            }
+        })
+
     } else {
-        desktopPlaying.style.display = "block";
+        manValidation.checked = false;
+        autValidation.checked = false;
+        riwValidation.checked = false;
+        mobilePlaying.style.display = "none";
+        divRiWValidation.style.display = "block";
+
+        riwValidation.addEventListener("change", function() {
+            if (riwValidation.checked) {
+                desktopPlaying.style.display = "block";
+            } else {
+                desktopPlaying.style.display = "none";
+            }
+        });
     }
 
     canvas.style.display = "block";
@@ -56,29 +99,3 @@ btnStart.addEventListener("click", function() {
     addedWords.style.display = "none";
     startZone.style.display = "none";
 });
-
-manValidation.addEventListener("change", function() {
-    if (manValidation.checked) {
-        autValidation.checked = false;
-        inputTry.placeholder = "Ingrese una letra o una palabra para comprobar.";
-        btnManGroup.style.display = "block";
-        scndRestart.style.display = "none";
-    } else {
-        autValidation.checked = true;
-        btnManGroup.style.display = "none";
-        scndRestart.style.display = "block";
-    }
-})
-
-autValidation.addEventListener("change", function() {
-    if (autValidation.checked) {
-        manValidation.checked = false;
-        inputTry.placeholder = "Ingrese letras para comprobar.";
-        btnManGroup.style.display = "none";
-        scndRestart.style.display = "block";
-    } else {
-        manValidation.checked = true;
-        btnManGroup.style.display = "block";
-        scndRestart.style.display = "none";
-    }
-})
