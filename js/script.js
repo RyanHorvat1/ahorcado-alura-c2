@@ -8,38 +8,14 @@ const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 context.fillStyle = "#333";
 context.fillRect(0, 0, 1 * canvas.width, 1 * canvas.height);
-const playing = document.querySelector(".mar-ls");
+const mobilePlaying = document.querySelector(".mar-ls");
+const desktopPlaying = document.querySelector(".mar-ls-2")
 const inputTry = document.getElementById("input-try");
 const btnManGroup = document.getElementById("manual-buttons");
 const scndRestart = document.querySelector(".scnd");
 const autValidation = document.getElementById("automatic-validation");
 const manValidation = document.getElementById("manual-validation");
 
-/*
-var userAgent = window.navigator.userAgent;
-var platform = window.navigator.platform;*/
-/*var platform = navigator.userAgentData.platform || navigator.platform || 'unknown';*/
-/*var macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
-var windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
-var iosPlatforms = ['iPhone', 'iPad', 'iPod'];
-var os = null;
-
-function getOS() {
-    if (macosPlatforms.indexOf(platform) !== -1) {
-        os = 'Mac OS';
-    } else if (iosPlatforms.indexOf(platform) !== -1) {
-        os = 'iOS';
-    } else if (windowsPlatforms.indexOf(platform) !== -1) {
-        os = 'Windows';
-    } else if (/Android/.test(userAgent)) {
-        os = 'Android';
-    } else if (!os && /Linux/.test(platform)) {
-        os = 'Linux';
-    }
-
-    return os;
-}
-*/
 function checkInitSelection() {
     var o = ownWords.checked;
     var p = predWords.checked;
@@ -68,26 +44,14 @@ ownWords.addEventListener("change", function() {
     checkInitSelection();
 });
 
-/*function mobile() {
-    getOS();
-    if (os != "Android" || os != "iOS") {
-        alert("Yup");
-    } else {
-        alert("Nope");
-    }
-}*/
-
 btnStart.addEventListener("click", function() {
-    /*mobile();*/
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // true for mobile device
-        alert("mobile device");
+        mobilePlaying.style.display = "block";
     } else {
-        // false for not mobile device
-        alert("not mobile device");
+        desktopPlaying.style.display = "block";
     }
+
     canvas.style.display = "block";
-    playing.style.display = "block";
     btnStart.style.display = "none";
     addedWords.style.display = "none";
     startZone.style.display = "none";

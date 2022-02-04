@@ -105,6 +105,10 @@ canvas {
     display: none;
 }
 
+.mar-ls-2 {
+    display: none;
+}
+
 .btn {
     margin-top: 10px;
     background-color: #008CBA;
