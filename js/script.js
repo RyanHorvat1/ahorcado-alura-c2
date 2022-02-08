@@ -13,6 +13,7 @@ const autValidation = document.getElementById("automatic-validation");
 const manValidation = document.getElementById("manual-validation");
 const riwValidation = document.getElementById("risk-word");
 const divRiWValidation = document.querySelector(".div-risk-word");
+const initWords = ["AAA", "AAAA", "AAAAA", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAAA", "AAAAAAAAAAA", "AAAAAAAAAAAA", "AAAAAAAAAAAAA", "AAAAAAAAAAAAAA", "AAAAAAAAAAAAAAA", "AAAAAAAAAAAAAAA", "AAAAAAAAAAAAAAAAA", "AAAAAAAAAAAAAAAAAA"];
 
 function checkInitSelection() {
     var o = ownWords.checked;
@@ -90,8 +91,10 @@ btnStart.addEventListener("click", function() {
         });
     }
 
+    drawBackground();
     drawGallow();
     drawHang();
+    drawDashes();
     canvas.style.display = "block";
     btnStart.style.display = "none";
     addedWords.style.display = "none";

@@ -93,9 +93,10 @@ textarea {
 }
 
 canvas {
-    width: 90%;
+    width: 99%;
+    margin-left: -5%;
     max-width: 1200px;
-    height: 50vh;
+    height: 300px;
     max-height: 800px;
     box-sizing: border-box;
     display: none;
