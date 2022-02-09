@@ -74,6 +74,7 @@ function drawHang() {
 const btnReinit = document.getElementById("reinit");
 
 btnReinit.addEventListener("click", () => {
+    selectWord();
     cleanLine();
     drawDashes();
     showWord();
@@ -95,22 +96,25 @@ btnMobReinit2.addEventListener("click", () => {
     showWord();
 });
 
+function selectWord() {}
 
 //FUNCTION TO CLEAN LINE
 function cleanLine() {
-    ctx.clearRect((canvas.width / 10) * 1.2, (canvas.height / 10) * 8, (canvas.width), (canvas.height / 10) * 1.25);
+    ctx.clearRect((canvas.width / 10) * 1.1, (canvas.height / 10) * 8, (canvas.width), (canvas.height / 10) * 1.25);
     ctx.fillStyle = "#333"
-    ctx.fillRect((canvas.width / 10) * 1.2, (canvas.height / 10) * 8, (canvas.width), (canvas.height / 10) * 1.3);
+    ctx.fillRect((canvas.width / 10) * 1.1, (canvas.height / 10) * 8, (canvas.width), (canvas.height / 10) * 1.3);
 }
 
 //FUNCTION TO DRAW THE DASHES
 function drawDashes() {
-    var n = Math.floor(Math.random() * 16);
-    window.n = n;
-    var l = initWords[n].length;
-    window.l = l;
     if (true) {
-        let i = (15.4065 * (Math.exp((-0.0957 * l))));
+        var arr = Math.floor(Math.random() * 5);
+        window.arr = arr;
+        var s = Math.floor(Math.random() * 26);
+        window.s = s;
+        var l = selWords[arr][s].length;
+        window.l = l;
+        var i = (15.4065 * (Math.exp((-0.0957 * l))));
         window.i = i;
         var z = l + i;
         window.z = z;
@@ -127,13 +131,12 @@ function drawDashes() {
 function showWord() {
     let p = 0;
     while (p < l && i < z) {
-        //for (i; i < z; i++) {
         ctx.moveTo((canvas.width / 10) * 3.5, (canvas.height / 10) * 9);
         ctx.font = "10px serif";
         ctx.fillStyle = "#FFF";
         ctx.textAlign = "center";
-        ctx.fillText(initWords[n].charAt(p), (canvas.width / 20) * i, (canvas.height / 10) * 9);
-        //}
+        ctx.fillText(selWords[arr][s].charAt(p), (canvas.width / 20) * i, (canvas.height / 10) * 9);
+
         i++
         p++;
     }

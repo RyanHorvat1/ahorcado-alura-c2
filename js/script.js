@@ -13,7 +13,6 @@ const autValidation = document.getElementById("automatic-validation");
 const manValidation = document.getElementById("manual-validation");
 const riwValidation = document.getElementById("risk-word");
 const divRiWValidation = document.querySelector(".div-risk-word");
-const initWords = ["OSO", "GATO", "PERRO", "HALCÓN", "BALLENA", "ELEFANTE", "ARMADILLO", "PUERCOESPÍN", "RINOCERONTE", "VELOCIRAPTOR", "INVERTEBRADOS", "REVERSIBILIDAD", "VIDEOGRABADORES", "IRREVERSIBILIDAD", "IRREPROCHABILIDAD", "ANGLOAMERICANISMOS"];
 
 function checkInitSelection() {
     var o = ownWords.checked;
