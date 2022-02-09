@@ -15,10 +15,3 @@ const initWords16 = ["ACCIDENTALIDADES", "BAJACALIFORNIANO", ];
 const initWords17 = ["ARTERIOESCLEROSIS", "BACHILLERAMIENTOS"];
 const initWords18 = ["ANTICONSTITUCIONAL", "BIDIRECCIONALMENTE", ];*/
 const selWords = [initWords3, initWords4, initWords5, initWords6, initWords7];
-
-function selectWord() {
-    var arr = Math.floor(Math.random() * 5);
-    window.arr = arr;
-    var s = Math.floor(Math.random() * 26);
-    window.s = s;
-}
