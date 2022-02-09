@@ -132,7 +132,7 @@ function showWord() {
         ctx.font = "10px serif";
         ctx.fillStyle = "#FFF";
         ctx.textAlign = "center";
-        ctx.fillText("BI", (canvas.width / 20) * i, (canvas.height / 10) * 9);
+        ctx.fillText(initWords[n].charAt(p), (canvas.width / 20) * i, (canvas.height / 10) * 9);
         //}
         i++
         p++;
