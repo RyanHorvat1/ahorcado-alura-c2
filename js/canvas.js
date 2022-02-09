@@ -74,15 +74,17 @@ function drawHang() {
 const btnReinit = document.getElementById("reinit");
 
 btnReinit.addEventListener("click", () => {
-    ctx.clearRect((canvas.width / 10) * 1.2, (canvas.height / 10) * 8, (canvas.width), (canvas.height / 10) * 1.25);
-    ctx.fillStyle = "#333"
-    ctx.fillRect((canvas.width / 10) * 1.2, (canvas.height / 10) * 8, (canvas.width), (canvas.height / 10) * 1.3);
+    cleanLine();
     drawDashes();
     showWord();
 });
 
-var n = "";
-var l = "";
+//FUNCTION TO CLEAN LINE
+function cleanLine() {
+    ctx.clearRect((canvas.width / 10) * 1.2, (canvas.height / 10) * 8, (canvas.width), (canvas.height / 10) * 1.25);
+    ctx.fillStyle = "#333"
+    ctx.fillRect((canvas.width / 10) * 1.2, (canvas.height / 10) * 8, (canvas.width), (canvas.height / 10) * 1.3);
+}
 
 //FUNCTION TO DRAW THE DASHES
 function drawDashes() {
@@ -92,7 +94,9 @@ function drawDashes() {
     window.l = l;
     if (true) {
         let i = (15.4065 * (Math.exp((-0.0957 * l))));
+        window.i = i;
         var z = l + i;
+        window.z = z;
         for (i; i < z; i++) {
             ctx.moveTo((canvas.width / 10) * 4, (canvas.height / 10) * 9);
             ctx.font = "10px sans-serif";
@@ -101,19 +105,19 @@ function drawDashes() {
             ctx.fillText("__", (canvas.width / 20) * i, (canvas.height / 10) * 9);
         }
     }
-    return n;
 }
 
 function showWord() {
-    for (p = 0; p < l; p++) {
-        let i = (15.4065 * (Math.exp((-0.0957 * l))));
-        var z = l + i;
-        for (i; i < z; i++) {
-            ctx.moveTo((canvas.width / 10) * 3.5, (canvas.height / 10) * 9);
-            ctx.font = "10px serif";
-            ctx.fillStyle = "#FFF";
-            ctx.textAlign = "center";
-            ctx.fillText("E", (canvas.width / 20) * i, (canvas.height / 10) * 9);
-        }
+    let p = 0;
+    while (p < l && i < z) {
+        //for (i; i < z; i++) {
+        ctx.moveTo((canvas.width / 10) * 3.5, (canvas.height / 10) * 9);
+        ctx.font = "10px serif";
+        ctx.fillStyle = "#FFF";
+        ctx.textAlign = "center";
+        ctx.fillText("BI", (canvas.width / 20) * i, (canvas.height / 10) * 9);
+        //}
+        i++
+        p++;
     }
 }
