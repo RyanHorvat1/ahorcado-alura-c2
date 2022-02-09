@@ -118,12 +118,13 @@ function drawDashes() {
         window.i = i;
         var z = l + i;
         window.z = z;
-        for (i; i < z; i++) {
+        while (i < z) {
             ctx.moveTo((canvas.width / 10) * 4, (canvas.height / 10) * 9);
             ctx.font = "10px sans-serif";
             ctx.fillStyle = "#FFF";
             ctx.textAlign = "center";
             ctx.fillText("__", (canvas.width / 20) * i, (canvas.height / 10) * 9);
+            i++;
         }
     }
 }
