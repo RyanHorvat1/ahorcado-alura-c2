@@ -79,17 +79,17 @@ btnReinit.addEventListener("click", () => {
     showWord();
 });
 
-const btnReinit = document.getElementById("mobile-reinit-1");
+const btnMobReinit1 = document.getElementById("mobile-reinit-1");
 
-btnReinit.addEventListener("click", () => {
+btnMobReinit1.addEventListener("click", () => {
     cleanLine();
     drawDashes();
     showWord();
 });
 
-const btnReinit = document.getElementById("mobile-reinit-2");
+const btnMobReinit2 = document.getElementById("mobile-reinit-2");
 
-btnReinit.addEventListener("click", () => {
+btnMobReinit2.addEventListener("click", () => {
     cleanLine();
     drawDashes();
     showWord();
