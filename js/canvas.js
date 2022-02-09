@@ -79,6 +79,23 @@ btnReinit.addEventListener("click", () => {
     showWord();
 });
 
+const btnReinit = document.getElementById("mobile-reinit-1");
+
+btnReinit.addEventListener("click", () => {
+    cleanLine();
+    drawDashes();
+    showWord();
+});
+
+const btnReinit = document.getElementById("mobile-reinit-2");
+
+btnReinit.addEventListener("click", () => {
+    cleanLine();
+    drawDashes();
+    showWord();
+});
+
+
 //FUNCTION TO CLEAN LINE
 function cleanLine() {
     ctx.clearRect((canvas.width / 10) * 1.2, (canvas.height / 10) * 8, (canvas.width), (canvas.height / 10) * 1.25);
