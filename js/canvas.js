@@ -74,7 +74,6 @@ function drawHang() {
 const btnReinit = document.getElementById("reinit");
 
 btnReinit.addEventListener("click", () => {
-    selectWord();
     cleanLine();
     drawDashes();
     showWord();
@@ -83,7 +82,6 @@ btnReinit.addEventListener("click", () => {
 const btnMobReinit1 = document.getElementById("mobile-reinit-1");
 
 btnMobReinit1.addEventListener("click", () => {
-    selectWord();
     cleanLine();
     drawDashes();
     showWord();
@@ -92,13 +90,10 @@ btnMobReinit1.addEventListener("click", () => {
 const btnMobReinit2 = document.getElementById("mobile-reinit-2");
 
 btnMobReinit2.addEventListener("click", () => {
-    selectWord();
     cleanLine();
     drawDashes();
     showWord();
 });
-
-function selectWord() {}
 
 //FUNCTION TO CLEAN LINE
 function cleanLine() {
