@@ -104,7 +104,26 @@ function cleanLine() {
 
 //FUNCTION TO DRAW THE DASHES
 function drawDashes() {
-    if (true) {
+    if (newWordsArray.length = 0) {
+        var arr = (Math.floor(Math.random() * 6)) + 1;
+        window.arr = arr;
+        var s = Math.floor(Math.random() * 26);
+        window.s = s;
+        var l = selWords[arr][s].length;
+        window.l = l;
+        var i = (15.4065 * (Math.exp((-0.0957 * l))));
+        window.i = i;
+        var z = l + i;
+        window.z = z;
+        while (i < z) {
+            ctx.moveTo((canvas.width / 10) * 4, (canvas.height / 10) * 9);
+            ctx.font = "10px sans-serif";
+            ctx.fillStyle = "#FFF";
+            ctx.textAlign = "center";
+            ctx.fillText("__", (canvas.width / 20) * i, (canvas.height / 10) * 9);
+            i++;
+        }
+    } else {
         var arr = Math.floor(Math.random() * 6);
         window.arr = arr;
         var s = Math.floor(Math.random() * 26);

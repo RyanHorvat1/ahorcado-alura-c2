@@ -14,4 +14,4 @@ const initWords15 = ["ARGUMENTARIAMOS", "BACTERIOSTATICO", ];
 const initWords16 = ["ACCIDENTALIDADES", "BAJACALIFORNIANO", ];
 const initWords17 = ["ARTERIOESCLEROSIS", "BACHILLERAMIENTOS"];
 const initWords18 = ["ANTICONSTITUCIONAL", "BIDIRECCIONALMENTE", ];*/
-const selWords = [initWords3, initWords4, initWords5, initWords6, initWords7,initWords8];
+const selWords = [newWordsArray, initWords3, initWords4, initWords5, initWords6, initWords7,initWords8];

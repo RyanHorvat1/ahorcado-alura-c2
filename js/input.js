@@ -28,6 +28,7 @@ btnStart.addEventListener("click", () => {
         wordsArrayAdd.forEach(element => {
             console.log(element + ": " + element.length);
         });
+        window.newWordsArray = newWordsArray;
     } else {
         console.log("Vacío");
     }
