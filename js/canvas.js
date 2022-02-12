@@ -105,7 +105,7 @@ function cleanLine() {
 //FUNCTION TO DRAW THE DASHES
 function drawDashes() {
     if (true) {
-        var arr = Math.floor(Math.random() * 5);
+        var arr = Math.floor(Math.random() * 6);
         window.arr = arr;
         var s = Math.floor(Math.random() * 26);
         window.s = s;
